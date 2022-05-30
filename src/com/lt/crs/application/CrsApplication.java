@@ -39,7 +39,7 @@ public class CrsApplication {
 				userObj = userService.userLogin();
 				break;
 			case 2:
-				userService.registerUser();
+				userService.registerUser(1);
 				break;
 			case 3:
 				userService.updatePassword();
