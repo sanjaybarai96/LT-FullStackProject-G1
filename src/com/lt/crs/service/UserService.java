@@ -2,6 +2,7 @@ package com.lt.crs.service;
 
 import com.lt.crs.bean.User;
 import com.lt.crs.constants.InputConstants;
+import com.lt.crs.constants.Role;
 import com.lt.crs.constants.DataCollections;
 import com.lt.crs.dao.UserDao;
 import com.lt.crs.daoImpl.UserDaoImpl;
@@ -34,7 +35,7 @@ public class UserService implements UserServiceInterface{
 	}
 
 	@Override
-	public void registerUser() {
+	public void registerUser(int isApproved) {
 
 		Utils.printStatement("Registeration form");
 		boolean isUserExist = true;
@@ -49,7 +50,7 @@ public class UserService implements UserServiceInterface{
 		}
 		Utils.printStatement("Enter Password");
 		String password = InputConstants.sc.next();
-		userDao.saveUser(username,password);
+		userDao.saveUser(username,password,isApproved,Role.Student);
 		Utils.printStatement("User Register successfully");
 	}
 
