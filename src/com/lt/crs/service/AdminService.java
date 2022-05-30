@@ -34,6 +34,7 @@ public class AdminService implements AdminServiceInterface{
 					isExit = true;
 				}else {
 					studentApproving(students,UUID.fromString(InputConstants.input.toString()));
+					System.out.println("Students approved");
 				}
 			}
 		}
