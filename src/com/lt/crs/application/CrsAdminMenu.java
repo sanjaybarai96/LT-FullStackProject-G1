@@ -32,11 +32,9 @@ public class CrsAdminMenu {
 				break;
 			case 2:
 				courseService.removeCourse();
-				System.out.println("work in progress");
 				break;
 			case 3:
 				professorService.addProfessor();
-				System.out.println("work in progress");
 				break;
 			case 4:
 				adminService.approveStudents();
