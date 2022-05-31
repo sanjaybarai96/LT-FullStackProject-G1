@@ -14,4 +14,6 @@ public class Menu {
 			+ "5.Generate Report Card\n6.%s ";
 	
 	public static final String ProfessorMenu = "1.Add Grades\n2.View Enrolled Students\n3.Courses to tech\n4.%s";
+	public static final String OnlinePaymentMenu = "1.Debit/Credit Card\n2.UPI\n3.%s";
+	
 }

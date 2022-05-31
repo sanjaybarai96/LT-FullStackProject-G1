@@ -15,6 +15,14 @@ public class User {
 	private Date createDate;
 	private String role;
 	private int isApprove;
+	private String firstName;
+	private String lastName;
+	private String emailId;
+	private String dateOfBirth;
+	private String address;
+	private String location;
+	private long pincode;
+	private String country;
 	private boolean session;
 	
 	public UUID getUserId() {
@@ -58,6 +66,55 @@ public class User {
 	}
 	public void setSession(boolean session) {
 		this.session = session;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmailId() {
+		return emailId;
+	}
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public long getPincode() {
+		return pincode;
+	}
+	public void setPincode(long pincode) {
+		this.pincode = pincode;
+	}
+	public String getCountry() {
+		return country;
+	}
+	public void setCountry(String country) {
+		this.country = country;
 	}
 	@Override
 	public String toString() {

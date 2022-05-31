@@ -14,6 +14,10 @@ import com.lt.crs.bean.User;
  * @author user217
  *
  */
+/**
+ * @author user215
+ *
+ */
 public interface StuentServiceInterface {
 
 	//	List<Student> getAllStudents();
@@ -36,8 +40,14 @@ public interface StuentServiceInterface {
 	public void addCourse(UUID userId);
 	
 	/**
-	 * 
+	 * view grades
 	 */
 	public void viewGrade();
 
+	
+	/**
+	 * adding student
+	 * @param student
+	 */
+	public void addStudent(Student student);
 }

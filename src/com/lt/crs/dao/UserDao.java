@@ -12,6 +12,6 @@ public interface UserDao {
 	User getUser(String username);
 	List<User> getAllUser();
 	List<User> getAllStudentUser();
-	void saveUser(String username, String password,int isApproved,Role role);
+	void saveUser(User user);
 	List<User> getStudentById(List<UUID> collect);
 }

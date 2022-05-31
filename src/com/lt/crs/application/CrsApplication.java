@@ -156,7 +156,7 @@ public class CrsApplication {
 				userObj = userService.userLogin();
 				break;
 			case 2:
-				userService.registerUser(0);
+				userService.registerUser();
 				break;
 			case 3:
 				userService.updatePassword();
@@ -171,7 +171,7 @@ public class CrsApplication {
 			}
 
 			if(userObj!=null && userObj.getSession()) {
-				Utils.printStatement(String.format(Menu.WeclomeMsg,userObj.getUserName()));
+				Utils.printStatement(String.format(Menu.WeclomeMsg,userObj.getFirstName()));
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
 				Utils.printStatement("Last Login :: "+ LocalDateTime.now().format(dtf));
 				switch (Role.valueOf(userObj.getRole())) {
@@ -198,6 +198,8 @@ public class CrsApplication {
 		user.setUserId(UUID.randomUUID());
 		user.setUserName("admin");
 		user.setPassword("admin");
+		user.setFirstName("admin");
+		user.setLastName("");
 		user.setCreateDate(new Date());
 		user.setRole(Role.Admin.name());
 		user.setIsApprove(1);
