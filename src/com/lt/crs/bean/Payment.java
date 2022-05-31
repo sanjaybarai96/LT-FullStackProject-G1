@@ -40,4 +40,10 @@ public class Payment {
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
 	}
+	public String toString() 
+	{
+		return "paymentType[refernceId ," + referenceId + "studentId ," + studentId +
+				"amount ," + amount + "status ,"+ status +"paymentType ,"+ paymentType +"]";
+		
+	}
 }

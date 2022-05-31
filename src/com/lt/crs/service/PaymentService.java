@@ -56,7 +56,4 @@ public class PaymentService implements PaymentServiceInterface{
 		// TODO Auto-generated method stub
 		
 	}
-
-	
-	
 }
