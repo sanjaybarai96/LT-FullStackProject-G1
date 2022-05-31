@@ -69,5 +69,8 @@ public class StudentDaoImpl implements StudentDao {
 		.map(std->std=student).collect(Collectors.toList());
 	}
 
-	
+	@Override
+	public void save(Student student) {
+		DataCollections.students.add(student);
+	}
 }

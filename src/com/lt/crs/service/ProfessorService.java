@@ -24,17 +24,22 @@ public class ProfessorService implements ProfessorServiceInterface{
 	private UserDao userDao = new UserDaoImpl();
 	private CourseDao courseDao = new CourseDaoImpl();
 	private StudentDao studentDao = new StudentDaoImpl();
+	private UserService userService = new UserService(); 
 
 
 	@Override
 	public void addProfessor() {
 		boolean isExit = false;
 		while(!isExit) {
+			User user = new User();
 			Professor professor = new Professor(); 
-			System.out.println("Enter the principle name");
+			System.out.println("Enter the emailId");
 			professor.setName(InputConstants.sc.next());
 			professorDao.saveProfessor(professor);
-			userDao.saveUser(professor.getName(), "Admin@123", 1,Role.Professor);
+			user.setUserName(professor.getName());
+			user.setPassword("Admin@123");
+			userService.createUser(user, 1, Role.Professor);
+			userDao.saveUser(user);
 			System.out.println("Professor successfully added");
 			System.out.println("Press 1 to exit or if you want to continue to add new course press 2");
 			if(InputConstants.sc.nextInt()==1) {
@@ -42,7 +47,6 @@ public class ProfessorService implements ProfessorServiceInterface{
 			}
 		}		
 	}
-
 
 	@Override
 	public void viewEnrolledStudents(User userObj) {

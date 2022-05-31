@@ -1,5 +1,9 @@
 package com.lt.crs.service;
 
+import java.util.Date;
+import java.util.UUID;
+
+import com.lt.crs.bean.Student;
 import com.lt.crs.bean.User;
 import com.lt.crs.constants.InputConstants;
 import com.lt.crs.constants.Role;
@@ -11,6 +15,7 @@ import com.lt.crs.utils.Utils;
 public class UserService implements UserServiceInterface{
 	
 	private UserDao userDao = new UserDaoImpl();
+	private StudentService studentService = new StudentService();
 
 	@Override
 	public User userLogin() {
@@ -35,23 +40,57 @@ public class UserService implements UserServiceInterface{
 	}
 
 	@Override
-	public void registerUser(int isApproved) {
+	public void registerUser() {
 
+		User user = new User();
 		Utils.printStatement("Registeration form");
 		boolean isUserExist = true;
 		String username = "";
 		while(isUserExist) {
-			Utils.printStatement("Enter Username");
+			Utils.printStatement("Enter emailId");
 			username = InputConstants.sc.next();
 			if(!isUsernameExist(username))
 				isUserExist = false;
 			else
-				Utils.printStatement("Username exist. Try with another username");
+				Utils.printStatement("EmailId exist. Try with another emailId");
 		}
-		Utils.printStatement("Enter Password");
+		Utils.printStatement("Enter the password");
 		String password = InputConstants.sc.next();
-		userDao.saveUser(username,password,isApproved,Role.Student);
+		user.setUserName(username);
+		user.setPassword(password);
+		createUser(user,0,Role.Student);
+		userDao.saveUser(user);
+		addStudent(user);
 		Utils.printStatement("User Register successfully");
+	}
+
+	private void addStudent(User user) {
+		Student student = new Student();
+		student.setStudentId(user.getUserId());
+		studentService.addStudent(student);
+	}
+
+	public void createUser(User user,int isApprove,Role role) {
+		user.setUserId(UUID.randomUUID());
+		user.setCreateDate(new Date());
+		user.setIsApprove(isApprove);
+		user.setRole(role.name());
+		user.setSession(false);
+		user.setEmailId(user.getUserName());
+		System.out.println("Enter your first name");
+		user.setFirstName(InputConstants.sc.next());
+		System.out.println("Enter your last name");
+		user.setLastName(InputConstants.sc.next());
+		System.out.println("Enter date of birth (DD/MM/yyyy)");
+		user.setDateOfBirth(InputConstants.sc.next());
+		System.out.println("Enter address");
+		user.setAddress(InputConstants.sc.next());
+		System.out.println("Enter pin code");
+		user.setPincode(InputConstants.sc.nextInt());
+		System.out.println("Enter location");
+		user.setLocation(InputConstants.sc.next());
+		System.out.println("Enter country");
+		user.setCountry(InputConstants.sc.next());
 	}
 
 	@Override

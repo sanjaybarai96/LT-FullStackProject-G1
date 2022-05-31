@@ -1,30 +1,31 @@
 package com.lt.crs.bean;
 
+import java.util.UUID;
+
 public class Payment {
-	
-	public String refernceId;
-	private String studentId;
-	public int amount;
+
+	private String referenceId;
+	private UUID studentId;
+	private double amount;
 	private boolean status;
-	public String paymentType;
+	private String paymentType;
 	
-	
-	public String getRefernceId() {
-		return refernceId;
+	public String getReferenceId() {
+		return referenceId;
 	}
-	public void setRefernceId(String refernceId) {
-		this.refernceId = refernceId;
+	public void setReferenceId(String referenceId) {
+		this.referenceId = referenceId;
 	}
-	public String getStudentId() {
+	public UUID getStudentId() {
 		return studentId;
 	}
-	public void setStudentId(String studentId) {
+	public void setStudentId(UUID studentId) {
 		this.studentId = studentId;
 	}
-	public int getAmount() {
+	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(double amount) {
 		this.amount = amount;
 	}
 	public boolean isStatus() {
@@ -39,15 +40,10 @@ public class Payment {
 	public void setPaymentType(String paymentType) {
 		this.paymentType = paymentType;
 	}
-	
-	
 	public String toString() 
 	{
-		return "paymentType[refernceId ," + refernceId + "studentId ," + studentId +
-				"amount ," +amount+"status ,"+ status +"paymentType ,"+ paymentType +"]";
+		return "paymentType[refernceId ," + referenceId + "studentId ," + studentId +
+				"amount ," + amount + "status ,"+ status +"paymentType ,"+ paymentType +"]";
 		
 	}
-	
-	
-
 }

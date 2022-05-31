@@ -39,7 +39,7 @@ public class StudentService implements StuentServiceInterface{
 	@Override
 	public void courseRegistration(User user) {
 	System.out.println("please Select the Course");
-	List<String > branchesCourse=courseService.getCourseBranchList();
+	List<String> branchesCourse=courseService.getCourseBranchList();
 	 RegisterCourse registerCourse = new RegisterCourse();
 		int increment = 0;
 		for(String branch:branchesCourse) {
@@ -53,10 +53,16 @@ public class StudentService implements StuentServiceInterface{
 			registerCourse.setStudentId(user.getUserId());
 			registerCourse.setBranch(branchesCourse.get(InputConstants.optionNumber-1));
 			stdDao.courseRegistration(registerCourse);
+			updateStudent(user.getUserId(),registerCourse.getBranch());
 			System.out.println("Course Register successfully ");
-			
 		}
 		
+	}
+
+	private void updateStudent(UUID userId, String branch) {
+		Student student = stdDao.getStudentByID(userId);
+		student.setBranch(branch);
+		stdDao.updateStudent(student, userId);
 	}
 
 	/**
@@ -117,7 +123,7 @@ public class StudentService implements StuentServiceInterface{
 						isExit = true;
 					else {
 						Course cor=courses.get(InputConstants.optionNumber-1);
-						student.setCourse(student.getCourse().isEmpty()?cor.getName():String.join(
+						student.setCourse((student.getCourse()==null || student.getCourse().isEmpty())?cor.getName():String.join(
 								",",student.getCourse(),cor.getName()));
 						stdDao.updateStudent(student,userId);
 						System.out.println("Course added successfully");
@@ -134,6 +140,11 @@ public class StudentService implements StuentServiceInterface{
 	public void viewGrade() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void addStudent(Student student) {
+		stdDao.save(student);
 	}
 
 }

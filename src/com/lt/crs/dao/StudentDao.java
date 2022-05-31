@@ -36,5 +36,7 @@ public interface StudentDao {
 	Student getStudentByID(UUID userId);
 	
 	void updateStudent(Student student, UUID userId);
+	
+	void save(Student student);
 
 }

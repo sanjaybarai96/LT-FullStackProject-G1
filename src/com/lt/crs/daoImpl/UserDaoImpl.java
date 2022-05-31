@@ -20,15 +20,7 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void saveUser(String username, String password,int isApproved,Role role) {
-		User user = new User();
-		user.setUserId(UUID.randomUUID());
-		user.setUserName(username);
-		user.setPassword(password);
-		user.setCreateDate(new Date());
-		user.setIsApprove(isApproved);
-		user.setRole(role.name());
-		user.setSession(false);
+	public void saveUser(User user) {
 		DataCollections.users.add(user);
 	}
 
