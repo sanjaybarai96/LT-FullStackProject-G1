@@ -1,5 +1,7 @@
 package com.lt.crs.service;
 
+import java.util.List;
+
 import com.lt.crs.bean.Course;
 
 public interface CourseServiceInterface {
@@ -9,5 +11,7 @@ public interface CourseServiceInterface {
 	void removeCourse();
 	
 	Course getCourse();
+	
+	List<Course> getCourses();
 }
 

@@ -3,6 +3,10 @@ package com.lt.crs.bean;
 import java.util.Date;
 import java.util.UUID;
 
+/**
+ * @author user217
+ *
+ */
 public class User {
 
 	private UUID userId;

@@ -30,8 +30,8 @@ public class CrsApplication {
 	public static void main(String[] args) {
 		loadAdmin();
 		//needs to delete
-//		loadUser();
-//		loadProfessor();
+	//	loadUser();
+		//loadProfessor();
 		
 		
 		createMenu();
@@ -203,6 +203,7 @@ public class CrsApplication {
 		user.setRole(Role.Admin.name());
 		user.setIsApprove(1);
 		DataCollections.users.add(user);
+		DataCollections.courseBranches.addAll(Arrays.asList("BSC","MBA","BA"));
 	}
 }
 

@@ -11,4 +11,6 @@ public interface CourseDao {
 	List<Course> getAllCourse();
 	
 	List<Course> getCourse(String instructorName);
+
+	List<String> getAllBranchesCourses();
 }

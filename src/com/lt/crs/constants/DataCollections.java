@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.lt.crs.bean.Course;
 import com.lt.crs.bean.Professor;
+import com.lt.crs.bean.RegisterCourse;
 import com.lt.crs.bean.Student;
 import com.lt.crs.bean.User;
 
@@ -14,7 +15,7 @@ public class DataCollections {
 	public static List<Course> courses = new ArrayList<>();
 	public static List<Professor> professors = new ArrayList<>();
 	public static List<Student> students = new ArrayList<>();
-
-	
+	public static List<String> courseBranches = new ArrayList<>();
+	public static List<RegisterCourse> registerCourse = new ArrayList<>();
 	
 }

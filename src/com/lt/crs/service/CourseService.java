@@ -66,4 +66,16 @@ public class CourseService implements CourseServiceInterface {
 		return null;
 	}
 
+	public List<String> getCourseBranchList() {
+		return courseDao.getAllBranchesCourses();
+		
+	}
+
+	@Override
+	public List<Course> getCourses() {
+		// TODO Auto-generated method stub
+		return courseDao.getAllCourse();
+	}
+	
+
 }
