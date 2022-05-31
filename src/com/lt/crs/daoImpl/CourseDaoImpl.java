@@ -25,4 +25,10 @@ public class CourseDaoImpl implements CourseDao{
 											   .collect(Collectors.toList());
 	}
 
+	@Override
+	public List<String> getAllBranchesCourses() {
+		return DataCollections.courseBranches;
+		
+	}
+
 }
