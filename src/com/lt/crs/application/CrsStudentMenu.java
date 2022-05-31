@@ -11,6 +11,10 @@ public class CrsStudentMenu {
 	
 	private UserServiceInterface userService = new UserService();
 	
+	/*
+	 * Student menu
+	 * @params user
+	 */
 	public void createMenu(User user) {
 		if(user.getIsApprove() == 0) {
 			Utils.printStatement("Wait for you account to be approval by admin");

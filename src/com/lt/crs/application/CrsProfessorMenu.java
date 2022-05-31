@@ -1,8 +1,11 @@
 package com.lt.crs.application;
 
+
 import com.lt.crs.bean.User;
 import com.lt.crs.constants.InputConstants;
 import com.lt.crs.constants.Menu;
+import com.lt.crs.service.ProfessorService;
+import com.lt.crs.service.ProfessorServiceInterface;
 import com.lt.crs.service.UserService;
 import com.lt.crs.service.UserServiceInterface;
 import com.lt.crs.utils.Utils;
@@ -10,7 +13,12 @@ import com.lt.crs.utils.Utils;
 public class CrsProfessorMenu {
 
 	private UserServiceInterface userService = new UserService();
+	private ProfessorServiceInterface professorService = new ProfessorService();
 	
+	/*
+	 * Professor Menu
+	 * @params userObj
+	 */
 	public void createMenu(User userObj) {
 		boolean isExit = false;
 		while(!isExit) {
@@ -18,15 +26,13 @@ public class CrsProfessorMenu {
 			InputConstants.optionNumber = InputConstants.sc.nextInt();
 			switch (InputConstants.optionNumber) {
 			case 1:
-				//add grades method
+//				professorService.addGrades();
 				break;
 			case 2:
-				//add view enrolled students 
-				System.out.println("work in progress");
+				professorService.viewEnrolledStudents(userObj);
 				break;
 			case 3:
-				//add courses to teach
-				System.out.println("work in progress");
+				professorService.viewCourse(userObj);
 				break;
 			case 4:
 				userObj = userService.userLogout(userObj);

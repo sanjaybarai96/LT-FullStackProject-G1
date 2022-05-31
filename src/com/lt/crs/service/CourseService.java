@@ -26,7 +26,7 @@ public class CourseService implements CourseServiceInterface {
 			course.setInstructor(InputConstants.sc.next());
 
 			courseDao.saveCourse(course);
-
+			System.out.println("Course successfully added");
 			System.out.println("Press 1 to exit or if you want to continue to add new course press 2");
 			if(InputConstants.sc.nextInt()==1) {
 				isExit = true;
@@ -51,12 +51,19 @@ public class CourseService implements CourseServiceInterface {
 					isExit = true;
 				else {
 					courses.remove(InputConstants.optionNumber-1);
+					System.out.println("Course remove successfully");
 				}
 			}else {
 				System.out.println("No course list found");
 				isExit = true;
 			}
 		}
+	}
+
+	@Override
+	public Course getCourse() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

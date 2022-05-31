@@ -45,4 +45,10 @@ public class UserDaoImpl implements UserDao {
 		return students;
 	}
 
+	@Override
+	public List<User> getStudentById(List<UUID> studentIds) {
+		return DataCollections.users.stream()
+					.filter(user->studentIds.stream().anyMatch(studentId->user.getUserId().equals(studentId))).collect(Collectors.toList());
+	}
+
 }

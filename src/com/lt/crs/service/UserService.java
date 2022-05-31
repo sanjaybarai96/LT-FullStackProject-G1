@@ -62,7 +62,27 @@ public class UserService implements UserServiceInterface{
 
 	@Override
 	public void updatePassword() {
-		// TODO Auto-generated method stub
+		System.out.println("Enter username");
+		InputConstants.input = InputConstants.sc.next();
+		System.out.println("Enter old password");
+		String oldPassword = InputConstants.sc.next();
+		System.out.println("Enter new password");
+		String newPassword = InputConstants.sc.next();
+		
+		User user = userDao.getUser(InputConstants.input);
+		
+		if(user!= null) {
+			if(user.getPassword().equals(oldPassword)) {
+				user.setPassword(newPassword);
+				System.out.println("Password successfully changed");
+			}
+			else
+				System.out.println("Password is incorrect");
+		}else {
+			System.out.println("User not found");
+		}
+		
+		
 
 	}
 
