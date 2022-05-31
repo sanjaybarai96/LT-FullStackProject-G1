@@ -30,9 +30,8 @@ public class CrsApplication {
 	public static void main(String[] args) {
 		loadAdmin();
 		//needs to delete
-	//	loadUser();
-		//loadProfessor();
-		
+//		loadUser();
+//		loadProfessor();
 		
 		createMenu();
 	}
