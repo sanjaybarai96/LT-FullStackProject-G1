@@ -1,6 +1,7 @@
 package com.lt.crs.daoImpl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.lt.crs.bean.Course;
 import com.lt.crs.constants.DataCollections;
@@ -16,6 +17,12 @@ public class CourseDaoImpl implements CourseDao{
 	@Override
 	public List<Course> getAllCourse() {
 		return DataCollections.courses;
+	}
+
+	@Override
+	public List<Course> getCourse(String instructorName) {
+		return DataCollections.courses.stream().filter(course->course.getInstructor().equals(instructorName))
+											   .collect(Collectors.toList());
 	}
 
 }

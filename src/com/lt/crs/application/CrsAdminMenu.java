@@ -20,7 +20,10 @@ public class CrsAdminMenu {
 	private CourseServiceInterface courseService = new CourseService();
 	private ProfessorServiceInterface professorService = new ProfessorService();
 	
-	
+	/*
+	 * Admin menu
+	 * @params userObj
+	 */
 	public void createMenu(User userObj) {
 		boolean isExit = false;
 		while(!isExit) {

@@ -9,4 +9,6 @@ public interface CourseDao {
 	void saveCourse(Course course);
 
 	List<Course> getAllCourse();
+	
+	List<Course> getCourse(String instructorName);
 }

@@ -11,4 +11,10 @@ public class ProfessorDaoImpl implements ProfessorDao{
 		DataCollections.professors.add(professor);
 	}
 
+	@Override
+	public Professor getProfessor(String userName) {
+		return DataCollections.professors.stream().filter(professor->professor.getName().equals(userName))
+										   .findAny().orElseGet(null);
+	}
+
 }
