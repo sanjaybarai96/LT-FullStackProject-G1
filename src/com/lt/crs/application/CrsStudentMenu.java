@@ -9,10 +9,16 @@ import com.lt.crs.service.UserService;
 import com.lt.crs.service.UserServiceInterface;
 import com.lt.crs.utils.Utils;
 
+/**
+ * @author user215
+ * This is the Student menu
+ *
+ */
 public class CrsStudentMenu {
 	
 	private UserServiceInterface userService = new UserService();
 	private StudentService stdService = new StudentService();
+	private CrsPaymentMenu paymentMenu = new CrsPaymentMenu();
 	//private CourseService courseService = new CourseService();
 	/*
 	 * Student menu
@@ -50,13 +56,13 @@ public class CrsStudentMenu {
 				break;
 			case 6:
 				//Pay Fee
+				paymentMenu.createMenu(user);
 				break;
 			case 7:
 				userService.userLogout(user);
 				isExit=true;
 				break;
 				
-
 			default:
 				break;
 			}

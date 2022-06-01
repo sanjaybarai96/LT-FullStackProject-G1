@@ -1,5 +1,4 @@
 package com.lt.crs.application;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -21,6 +20,13 @@ import com.lt.crs.service.UserService;
 import com.lt.crs.service.UserServiceInterface;
 import com.lt.crs.utils.Utils;
 
+
+
+/**
+ * @author user215
+ *This is initial flow of the project
+ *
+ */
 public class CrsApplication {
 	static Role role;
 	private static CrsAdminMenu crsAdminMenu = new CrsAdminMenu();
@@ -30,8 +36,8 @@ public class CrsApplication {
 	public static void main(String[] args) {
 		loadAdmin();
 		//needs to delete
-		loadUser();
-		loadProfessor();
+//		loadUser();
+//		loadProfessor();
 		
 		createMenu();
 	}
@@ -92,7 +98,7 @@ public class CrsApplication {
 		courses.put(2, "C++");
 		courses.put(3, "Dot Net");
 		courses.put(4, "NG");
-		List<String> names = Arrays.asList("sanjay","krishna","narendra","priya","sdk");
+		List<String> names = Arrays.asList("sanjay","arjun","ravi","remo");
 		int count=1;
 		for(String name: names) {
 			User user = new User();
@@ -108,7 +114,7 @@ public class CrsApplication {
 			DataCollections.users.add(user);
 			loadStudents(uuid, courses.get(count++));
 		}
-		names = Arrays.asList("Bandaru","priya","narendra","sanjay","siddhik");
+		names = Arrays.asList("raju","sita","john","albert");
 		for(String name: names) {
 			User user = new User();
 			UUID uuid = UUID.randomUUID();
@@ -166,14 +172,14 @@ public class CrsApplication {
 				break;
 
 			default:
-				Utils.printStatement("Please Enter proper options");
+				Utils.printStatement("Please enter proper options");
 				break;
 			}
 
 			if(userObj!=null && userObj.getSession()) {
 				Utils.printStatement(String.format(Menu.WeclomeMsg,userObj.getFirstName()));
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
-				Utils.printStatement("UserLast Login :: "+ LocalDateTime.now().format(dtf));
+				Utils.printStatement("Last Login :: "+ LocalDateTime.now().format(dtf));
 				switch (Role.valueOf(userObj.getRole())) {
 				case Student:
 					crsStudentMenu.createMenu(userObj);
@@ -207,4 +213,5 @@ public class CrsApplication {
 		DataCollections.courseBranches.addAll(Arrays.asList("BSC","MBA","BA"));
 	}
 }
+
 

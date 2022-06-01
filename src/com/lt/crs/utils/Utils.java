@@ -1,9 +1,11 @@
 package com.lt.crs.utils;
 
 import java.util.Arrays;
+import java.util.Currency;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -63,5 +65,11 @@ public class Utils {
 //				.forEach(a -> System.out.printf(formatString.toString(), table[a]));
 //	 
 //	}
+	
+	public static String generateRefNumber() {
+		Random rnd = new Random();
+	    int number = rnd.nextInt(999999) + 1000000000;
+		return String.format("REF%10d", number);
+	}
 	
 }

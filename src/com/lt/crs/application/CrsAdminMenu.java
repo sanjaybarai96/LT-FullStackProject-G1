@@ -13,6 +13,12 @@ import com.lt.crs.service.UserService;
 import com.lt.crs.service.UserServiceInterface;
 import com.lt.crs.utils.Utils;
 
+
+/**
+ * @author user215
+ * This is the admin menu
+ *
+ */
 public class CrsAdminMenu {
 
 	private AdminServiceInterface adminService = new AdminService();
@@ -21,6 +27,7 @@ public class CrsAdminMenu {
 	private ProfessorServiceInterface professorService = new ProfessorService();
 	
 	/*
+	 * @author user215
 	 * Admin menu
 	 * @params userObj
 	 */

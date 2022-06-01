@@ -147,4 +147,9 @@ public class StudentService implements StuentServiceInterface{
 		stdDao.save(student);
 	}
 
+	@Override
+	public Student getStudentById(UUID userId) {
+		return stdDao.getStudentByID(userId);
+	}
+
 }

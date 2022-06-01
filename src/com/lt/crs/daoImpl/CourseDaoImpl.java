@@ -20,8 +20,8 @@ public class CourseDaoImpl implements CourseDao{
 	}
 
 	@Override
-	public List<Course> getCourse(String instructorName) {
-		return DataCollections.courses.stream().filter(course->course.getInstructor().equals(instructorName))
+	public List<Course> getCourseByInstructor(String instructorName) {
+		return DataCollections.courses.stream().filter(course->course.getInstructor().equalsIgnoreCase(instructorName))
 											   .collect(Collectors.toList());
 	}
 
@@ -29,6 +29,11 @@ public class CourseDaoImpl implements CourseDao{
 	public List<String> getAllBranchesCourses() {
 		return DataCollections.courseBranches;
 		
+	}
+
+	@Override
+	public List<Course> getCourseByCourseName(List<String> courses) {
+		return DataCollections.courses.stream().filter(course->courses.contains(course.getName())).collect(Collectors.toList());
 	}
 
 }
