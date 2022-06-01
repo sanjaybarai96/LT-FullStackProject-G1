@@ -2,6 +2,10 @@ package com.lt.crs.bean;
 
 import java.util.UUID;
 
+/**
+ * @author user215
+ *Payment bean contains payment member
+ */
 public class Payment {
 
 	private String referenceId;

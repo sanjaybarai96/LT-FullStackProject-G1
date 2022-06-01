@@ -10,7 +10,9 @@ public interface CourseDao {
 
 	List<Course> getAllCourse();
 	
-	List<Course> getCourse(String instructorName);
+	List<Course> getCourseByInstructor(String instructorName);
 
 	List<String> getAllBranchesCourses();
+	
+	List<Course> getCourseByCourseName(List<String> courses);
 }

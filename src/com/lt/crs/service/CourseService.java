@@ -24,7 +24,8 @@ public class CourseService implements CourseServiceInterface {
 			course.setOffered(InputConstants.sc.nextBoolean());
 			System.out.println("Enter the instructor name");
 			course.setInstructor(InputConstants.sc.next());
-
+			System.out.println("Enter the price");
+			course.setPrice(InputConstants.sc.nextDouble());
 			courseDao.saveCourse(course);
 			System.out.println("Course successfully added");
 			System.out.println("Press 1 to exit or if you want to continue to add new course press 2");
@@ -75,6 +76,11 @@ public class CourseService implements CourseServiceInterface {
 	public List<Course> getCourses() {
 		// TODO Auto-generated method stub
 		return courseDao.getAllCourse();
+	}
+
+	@Override
+	public List<Course> getCoursesByCourseName(List<String> courses) {
+		return courseDao.getCourseByCourseName(courses);
 	}
 	
 

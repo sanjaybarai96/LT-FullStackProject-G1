@@ -21,6 +21,13 @@ import com.lt.crs.service.UserService;
 import com.lt.crs.service.UserServiceInterface;
 import com.lt.crs.utils.Utils;
 
+
+
+/**
+ * @author user215
+ *This is initial flow of the project
+ *
+ */
 public class CrsApplication {
 	static Role role;
 	private static CrsAdminMenu crsAdminMenu = new CrsAdminMenu();

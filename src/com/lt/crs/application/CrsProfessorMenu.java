@@ -10,6 +10,11 @@ import com.lt.crs.service.UserService;
 import com.lt.crs.service.UserServiceInterface;
 import com.lt.crs.utils.Utils;
 
+/**
+ * @author user215
+ * This is the professor menu
+ *
+ */
 public class CrsProfessorMenu {
 
 	private UserServiceInterface userService = new UserService();

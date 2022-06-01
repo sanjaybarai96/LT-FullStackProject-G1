@@ -1,11 +1,16 @@
 package com.lt.crs.bean;
 
+/**
+ * @author user215
+ * Course bean contains course members
+ */
 public class Course {
 
 	private String courseCode;
 	private String name;
 	private boolean isOffered;
 	private String instructor;
+	private double price;
 	
 	public String getCourseCode() {
 		return courseCode;
@@ -31,10 +36,16 @@ public class Course {
 	public void setInstructor(String instructor) {
 		this.instructor = instructor;
 	}
+	
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	@Override
 	public String toString() {
 		return "Course [courseCode=" + courseCode + ", name=" + name + ", isOffered=" + isOffered + ", instructor="
-				+ instructor + "]";
+				+ instructor + ", price=" + price + "]";
 	}
-	
 }

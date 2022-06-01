@@ -24,7 +24,7 @@ public class StudentDaoImpl implements StudentDao {
 	public List<Student> getStudentsByCourseName(List<String> courses) {
 		
 		return DataCollections.students.stream()
-				.filter(student-> courses.stream().filter(course->student.getCourse().contains(course)).findAny().isPresent())
+				.filter(student-> (student.getCourse()!=null && courses.stream().filter(course->student.getCourse().contains(course)).findAny().isPresent()))
 				.collect(Collectors.toList());
 	}
 
