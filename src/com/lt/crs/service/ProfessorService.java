@@ -50,7 +50,7 @@ public class ProfessorService implements ProfessorServiceInterface{
 
 	@Override
 	public void viewEnrolledStudents(User userObj) {
-		List<Course> courses = courseDao.getCourse(userObj.getUserName());
+		List<Course> courses = courseDao.getCourseByInstructor(userObj.getFirstName());
 		List<Student> students =  studentDao.getStudentsByCourseName(courses.stream().map(Course::getName).collect(Collectors.toList()));
 		List<User> studentUsers = userDao.getStudentById(students.stream().map(Student::getStudentId).collect(Collectors.toList()));
 
@@ -70,7 +70,7 @@ public class ProfessorService implements ProfessorServiceInterface{
 
 	@Override
 	public void viewCourse(User userObj) {
-		List<Course> courses = courseDao.getCourse(userObj.getUserName());
+		List<Course> courses = courseDao.getCourseByInstructor(userObj.getFirstName());
 		System.out.printf("Subject");
 		courses.stream().forEach(course->System.out.format("\n"+course.getName()));
 		System.out.println();

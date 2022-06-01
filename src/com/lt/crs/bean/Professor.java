@@ -1,5 +1,9 @@
 package com.lt.crs.bean;
 
+/**
+ * @author user215
+ *Professor bean contains professor member
+ */
 public class Professor {
 	
 	private String name;

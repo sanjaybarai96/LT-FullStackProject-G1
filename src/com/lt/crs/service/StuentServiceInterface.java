@@ -50,4 +50,6 @@ public interface StuentServiceInterface {
 	 * @param student
 	 */
 	public void addStudent(Student student);
+	
+	public Student getStudentById(UUID userId);
 }

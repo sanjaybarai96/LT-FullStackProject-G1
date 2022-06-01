@@ -22,7 +22,7 @@ public class UserService implements UserServiceInterface{
 		boolean credentialCheck = true;
 		User userObj = null;
 		while(credentialCheck) {
-			Utils.printStatement("Enter Username");
+			Utils.printStatement("Enter Email id");
 			String username = InputConstants.sc.next();
 			Utils.printStatement("Enter Password");
 			String password = InputConstants.sc.next();
