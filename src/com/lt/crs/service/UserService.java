@@ -22,7 +22,7 @@ public class UserService implements UserServiceInterface{
 		boolean credentialCheck = true;
 		User userObj = null;
 		while(credentialCheck) {
-			Utils.printStatement("Enter Username");
+			Utils.printStatement("Enter the emailId");
 			String username = InputConstants.sc.next();
 			Utils.printStatement("Enter Password");
 			String password = InputConstants.sc.next();
@@ -101,7 +101,7 @@ public class UserService implements UserServiceInterface{
 
 	@Override
 	public void updatePassword() {
-		System.out.println("Enter username");
+		System.out.println("Enter the emailId");
 		InputConstants.input = InputConstants.sc.next();
 		System.out.println("Enter old password");
 		String oldPassword = InputConstants.sc.next();

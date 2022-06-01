@@ -30,8 +30,8 @@ public class CrsApplication {
 	public static void main(String[] args) {
 		loadAdmin();
 		//needs to delete
-//		loadUser();
-//		loadProfessor();
+		loadUser();
+		loadProfessor();
 		
 		createMenu();
 	}
@@ -92,7 +92,7 @@ public class CrsApplication {
 		courses.put(2, "C++");
 		courses.put(3, "Dot Net");
 		courses.put(4, "NG");
-		List<String> names = Arrays.asList("sanjay","arjun","ravi","remo");
+		List<String> names = Arrays.asList("sanjay","krishna","narendra","priya","sdk");
 		int count=1;
 		for(String name: names) {
 			User user = new User();
@@ -108,7 +108,7 @@ public class CrsApplication {
 			DataCollections.users.add(user);
 			loadStudents(uuid, courses.get(count++));
 		}
-		names = Arrays.asList("raju","sita","john","albert");
+		names = Arrays.asList("Bandaru","priya","narendra","sanjay","siddhik");
 		for(String name: names) {
 			User user = new User();
 			UUID uuid = UUID.randomUUID();
@@ -166,14 +166,14 @@ public class CrsApplication {
 				break;
 
 			default:
-				Utils.printStatement("Please enter proper options");
+				Utils.printStatement("Please Enter proper options");
 				break;
 			}
 
 			if(userObj!=null && userObj.getSession()) {
 				Utils.printStatement(String.format(Menu.WeclomeMsg,userObj.getFirstName()));
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd-MM-yyy HH:mm:ss");
-				Utils.printStatement("Last Login :: "+ LocalDateTime.now().format(dtf));
+				Utils.printStatement("UserLast Login :: "+ LocalDateTime.now().format(dtf));
 				switch (Role.valueOf(userObj.getRole())) {
 				case Student:
 					crsStudentMenu.createMenu(userObj);

@@ -38,7 +38,7 @@ public class StudentService implements StuentServiceInterface{
 
 	@Override
 	public void courseRegistration(User user) {
-	System.out.println("please Select the Course");
+	System.out.println("=====:===please Select the Course=======:==");
 	List<String> branchesCourse=courseService.getCourseBranchList();
 	 RegisterCourse registerCourse = new RegisterCourse();
 		int increment = 0;
@@ -54,7 +54,7 @@ public class StudentService implements StuentServiceInterface{
 			registerCourse.setBranch(branchesCourse.get(InputConstants.optionNumber-1));
 			stdDao.courseRegistration(registerCourse);
 			updateStudent(user.getUserId(),registerCourse.getBranch());
-			System.out.println("Course Register successfully ");
+			System.out.println("=======:====Course Registration successfully=====:==== ");
 		}
 		
 	}
@@ -89,7 +89,7 @@ public class StudentService implements StuentServiceInterface{
 					listofCourses.remove(InputConstants.optionNumber-1);
 					student.setCourse(listofCourses.stream().collect(Collectors.joining(",")));
 					stdDao.updateStudent(student, userId);
-					System.out.println("Course remove successfully");
+					System.out.println("======:==Course remove successfully=====:===");
 				}
 			}else {
 				System.out.println("No course list found");
@@ -107,7 +107,7 @@ public class StudentService implements StuentServiceInterface{
 	@Override
 	public void addCourse(UUID userId) {
 		Student student  = stdDao.getStudentByID(userId);
-		System.out.println("please choose the courses  ");
+		System.out.println("====:====please choose the courses======:====");
 		List<Course > courses=courseService.getCourses();
 			boolean isExit = false;
 			while(!isExit) {
@@ -126,7 +126,7 @@ public class StudentService implements StuentServiceInterface{
 						student.setCourse((student.getCourse()==null || student.getCourse().isEmpty())?cor.getName():String.join(
 								",",student.getCourse(),cor.getName()));
 						stdDao.updateStudent(student,userId);
-						System.out.println("Course added successfully");
+						System.out.println("=====:====Course added successfully======:=====");
 					}
 				}else {
 					System.out.println("No course list found");
