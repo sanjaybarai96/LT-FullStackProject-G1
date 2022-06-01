@@ -1,5 +1,4 @@
 package com.lt.crs.application;
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
@@ -214,4 +213,5 @@ public class CrsApplication {
 		DataCollections.courseBranches.addAll(Arrays.asList("BSC","MBA","BA"));
 	}
 }
+
 
